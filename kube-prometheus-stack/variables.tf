@@ -1,11 +1,4 @@
-
-variable "kubernetes_config_path" {
-  description = "Path to the kube config file"
-  type        = string
-  default     = "~/.kube/config"
+variable "kubernetes_host" {
+  description = "The API server URL of the Kubernetes cluster"
+  default     = "https://kubernetes.default.svc" # This is the default for in-cluster communication
 }
-
-// variable "grafana_domain" {
-//   description = "Domain name for Grafana"
-//   type        = string
-// }

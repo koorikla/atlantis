@@ -1,10 +1,15 @@
-
+# Kubernetes provider using the in-cluster service account
 provider "kubernetes" {
-  config_path = "~/.kube/config"
+  host                   = "https://${var.kubernetes_host}"
+  token                  = file("/var/run/secrets/kubernetes.io/serviceaccount/token")
+  cluster_ca_certificate = file("/var/run/secrets/kubernetes.io/serviceaccount/ca.crt")
 }
 
+# Helm provider using the in-cluster Kubernetes access
 provider "helm" {
   kubernetes {
-    config_path = "~/.kube/config"
+    host                   = "https://${var.kubernetes_host}"
+    token                  = file("/var/run/secrets/kubernetes.io/serviceaccount/token")
+    cluster_ca_certificate = file("/var/run/secrets/kubernetes.io/serviceaccount/ca.crt")
   }
 }
