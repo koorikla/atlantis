@@ -1,0 +1,20 @@
+# https://github.com/runatlantis/helm-charts/blob/main/charts/atlantis/values.yaml
+
+# Enable or disable ingress for Atlantis
+ingress:
+  enabled: false
+
+# # Atlantis configuration
+fullnameOverride: "atlantis"
+
+# -- The external IP or DNS address for Atlantis
+atlantisUrl: "http://10.0.0.0"
+
+# -- The GitHub organization or repository allowlist
+orgAllowlist: "github.com/koorikla/atlantis"
+
+# -- GitHub configuration (example with personal access token)
+github:
+  user: "your-github-username"
+  token: "your-github-token"
+  secret: baz
