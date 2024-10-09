@@ -1,14 +1,15 @@
 version: 3
 projects:
-  - name: atlantis
-    dir: atlantis-terraform/
-    workspace: default
-    autoplan:
-      when_modified: ["*.tf", "*.tfvars", "modules/**"]
-      enabled: true
   - name: kube-prometheus-stack
     dir: kube-prometheus-stack/
     workspace: default
     autoplan:
       when_modified: ["*.tf", "*.tfvars", "modules/**"]
       enabled: true
+## In theory Atlantis could manage itself in a gitops manner
+  # - name: atlantis
+  #   dir: atlantis-terraform/
+  #   workspace: default
+  #   autoplan:
+  #     when_modified: ["*.tf", "*.tfvars", "modules/**"]
+  #     enabled: true

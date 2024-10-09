@@ -13,8 +13,8 @@ atlantisUrl: "http://10.0.0.0"
 # -- The GitHub organization or repository allowlist
 orgAllowlist: "github.com/koorikla/atlantis"
 
-# -- GitHub configuration (example with personal access token)
+# -- GitHub configuration
 github:
-  user: "your-github-username"
-  token: "your-github-token"
-  secret: baz
+  user: "${github_user}"
+  token: "${github_token}"
+  secret: "${github_secret}"

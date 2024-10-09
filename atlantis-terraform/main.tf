@@ -6,9 +6,16 @@ resource "helm_release" "atlantis" {
   version    = var.helm_chart_version
   create_namespace = true
 
-  # Point to the helm-values.yaml file for configuration
-  values = [file("${path.module}/atlantis-helm-values.yaml")]
+  # Use the templatefile function to replace variables in the values.yaml file
+  values = [
+    templatefile("${path.module}/atlantis-helm-values.yaml", {
+      github_user  = var.github_user,
+      github_token = var.github_token,
+      github_secret = var.github_secret      
+    })
+  ]
 }
+
 
 # Deployment to create a cloudflare tunnel
 resource "kubernetes_deployment" "cloudflared" {

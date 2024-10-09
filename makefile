@@ -25,6 +25,13 @@ delete-cluster:
 	kind delete cluster --name $(KIND_CLUSTER_NAME)
 
 
-# Initialize Te
 bootstrap-atlantis:
+	@read -p "Enter your GitHub username: " github_user; \
+	read -sp "Enter your GitHub token: " github_token; \
+	echo ""; \
+	read -sp "Enter your GitHub secret: " github_secret; \
+	echo ""; \
+	export TF_VAR_github_user=$$github_user; \
+	export TF_VAR_github_token=$$github_token; \
+	export TF_VAR_github_secret=$$github_secret; \
 	cd atlantis-terraform && terraform init && terraform apply -auto-approve
