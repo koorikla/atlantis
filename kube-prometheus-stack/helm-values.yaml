@@ -1,0 +1,6 @@
+fullnameOverride: "prometheus"
+
+prometheus:
+  prometheusSpec:
+    scrapeConfigSelector:
+      matchLabels: null
