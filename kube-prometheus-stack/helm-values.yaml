@@ -1,0 +1,9 @@
+# Using as many default values as possible from https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack?modal=values
+# Everything can be overriden here
+
+fullnameOverride: "prometheus"
+
+prometheus:
+  prometheusSpec:
+    scrapeConfigSelector:
+      matchLabels: null
