@@ -15,7 +15,7 @@ make create-cluster
 https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
 
 4. Boostrap Atlantis and Cloudflare tunnels.
-    insert your github username, token from 2nd step and define a webhook secret
+    insert your github username, token from 3rd step and define a webhook secret
 ```
 make bootstrap-atlantis
 ```
